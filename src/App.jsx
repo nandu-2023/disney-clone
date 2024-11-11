@@ -8,8 +8,6 @@ import GenreMovieList from './Componets/GenreMovieList'
 
 
 function App() {
-  
-
   return (
     <div className="">
         <Header/>
