@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import './App.css'
 import Header from './Componets/Header'
 import Slider from './Componets/Slider'
