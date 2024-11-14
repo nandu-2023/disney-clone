@@ -16,30 +16,35 @@ function ProductionHouse() {
         {
             id: 1,
             image: disney,
-            video: disneyV
+            video: disneyV,
+            alt: "Disney logo"
         },
         {
             id: 2,
             image: pixar,
-            video: pixarV
+            video: pixarV,
+            alt: "Pixar logo"
         },
         {
             id: 3,
             image: marvel,
-            video: marvelV
+            video: marvelV,
+            alt: "Marvel logo"
         },
         {
             id: 4,
             image: starwar,
-            video: starwarV
+            video: starwarV,
+            alt: "Star Wars logo"
         },
         {
             id: 5,
             image: nationalG,
-            video: nationalGeographicV
+            video: nationalGeographicV,
+            alt: "National Geographic logo"
         },
     ];
-  
+
     return (
         <div className='flex gap-2 md:gap-5 p-2 px-5 md:px-16 '>
             {productionHouseList.map((item) => (
@@ -55,7 +60,11 @@ function ProductionHouse() {
                         muted
                         className='absolute z-0 top-0 rounded-md opacity-0 hover:opacity-50'
                     />
-                    <img src={item.image} className='w-full z-[1] opacity-100' />
+                    <img
+                        src={item.image}
+                        alt={item.alt}  // Add the alt prop here
+                        className='w-full z-[1] opacity-100'
+                    />
                 </div>
             ))}
         </div>
