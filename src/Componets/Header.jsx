@@ -34,32 +34,31 @@ function Header() {
                 </div>
                 
                 {/* Mobile Menu */}
-                <div className="flex md:hidden gap-5" role="menu">
+                <div className="flex md:hidden gap-5" aria-label="Main menu">
                     {menu.slice(0, 3).map(item => (
                         <HeaderItem key={item.name} name="" Icon={item.icon} />
                     ))}
 
                     {/* Toggle Button */}
-                    <div
+                    <button
                         className="md:hidden"
                         onClick={toggleMenu}
                         onKeyDown={handleKeyToggle}
-                        role="button"
                         aria-haspopup="menu"
-                        aria-expanded={toggle}
+                        aria-pressed={toggle}
                         tabIndex={0}
                     >
                         <HeaderItem name="" Icon={HiDotsVertical} />
-                        
-                        {/* Dropdown Menu */}
-                        {toggle && (
-                            <div className="absolute mt-3 bg-[#121212] border-[1px] border-gray-700 p-3 px-5 py-4" role="menu">
-                                {menu.slice(3).map(item => (
-                                    <HeaderItem key={item.name} name={item.name} Icon={item.icon} />
-                                ))}
-                            </div>
-                        )}
-                    </div>
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    {toggle && (
+                        <div className="absolute mt-3 bg-[#121212] border-[1px] border-gray-700 p-3 px-5 py-4" role="menu">
+                            {menu.slice(3).map(item => (
+                                <HeaderItem key={item.name} name={item.name} Icon={item.icon} />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
             
@@ -68,8 +67,6 @@ function Header() {
                 src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
                 alt="User Avatar"
                 className="w-[40px] rounded-full"
-                role="img"
-                aria-label="User Avatar"
             />
         </div>
     );
